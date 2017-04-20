@@ -205,7 +205,7 @@ TreeControllers.controller('parsimony-StartController',['$scope', '$state', '$ro
 
 TreeControllers.controller('parsimony-SiteFillController',['$scope', '$state', '$rootScope', '$mdDialog' ,'ParsimonyModel', function($scope,$state, $rootScope, $mdDialog, ParsimonyModel) {
 
-
+	angular.element(document.getElementsByClassName('main-game-box')).css('width', "750px");
 
 	$scope.tree_fill = function(){
 		$state.go('app.parsimony-tree-fill');
@@ -278,7 +278,7 @@ TreeControllers.controller('parsimony-SiteFillController',['$scope', '$state', '
 
 TreeControllers.controller('parsimony-TreeFillController',['$scope', '$state', '$rootScope','$mdDialog' ,'ParsimonyModel', function($scope,$state, $rootScope, $mdDialog, ParsimonyModel) {
 
-
+	angular.element(document.getElementsByClassName('main-game-box')).css('width', "750px");
 	$scope.end = function(){
 		$state.go('app.parsimony-end');
 	}
@@ -476,7 +476,7 @@ TreeControllers.controller('parsimony-TreeFillController',['$scope', '$state', '
 }]);
 
 TreeControllers.controller('parsimony-EndController',['$scope', '$state', '$rootScope','ParsimonyModel', function($scope,$state, $rootScope, ParsimonyModel) {
-
+	angular.element(document.getElementsByClassName('main-game-box')).css('width', "750px");
 	$scope.min = Math.min.apply(null, $rootScope.sum);
 	var user_info_set = ParsimonyModel.getInfoSet(($rootScope.drop_set).slice());
 
