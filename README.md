@@ -1,4 +1,4 @@
-## Teaching Engine for Genomics
+# Teaching Engine for Genomics
 
 Welcome to TeachEnG, a Teaching Engine for Genomics! 
 
@@ -6,8 +6,8 @@ TeachEnG provides interactive modules to help students and researchers understan
 
 Please contact us via email (knoweng@illinois.edu) if you have any questions or suggestions.
 
-# Link
+## Link
 http://song.igb.illinois.edu/TeachEnG/
 
-# LICENSE
+## LICENSE
 Artistic License 2.0
