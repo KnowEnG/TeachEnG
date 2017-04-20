@@ -1,0 +1,77 @@
+<div ng-controller='HeaderController'>
+	
+
+	
+	<h2 class="md-display-1 main-info">Choose a game to play.</h2>
+		
+		<md-toolbar class="md-table-toolbar md-default">
+	  <div class="md-toolbar-tools">
+	    <span>Other Related Software Tools</span>
+	  </div>
+	</md-toolbar>
+
+		<div layout="row">
+				<md-table-container>
+				 <table md-table>
+					 <thead md-head>
+					      <tr md-row>
+					        <th md-column><span>Name</span></th>
+					        <th md-column><span>Author(s)</span></th>
+					          <th md-column><span>Link</span></th>
+					           <th md-column><span>Purpose</span></th>
+					      </tr>
+					   </thead>
+
+				 <tbody md-body>
+				      <tr md-row ng-repeat="item in software_data">
+				        <td md-cell id="software-title">{{item.name}}</td>
+				        <td md-cell>{{item.author}}</td>
+				        <td md-cell><a id="table-link" ng-href="{{item.link}}">Link</a></td>
+				        <td md-cell>{{item.purpose}}</td>
+				      </tr>
+				    </tbody>
+					
+				</table>
+				</md-table-container>
+
+		</div>
+<BR>
+<HR>
+
+		<md-toolbar class="md-table-toolbar md-default">
+	  <div class="md-toolbar-tools">
+	    <span>References</span>
+	  </div>
+	</md-toolbar>
+		<div id = "reference" layout="row">
+				<md-table-container>
+ 			<table md-table>
+					  <!--<thead md-head>
+					      <tr md-row>
+					        <th md-column><span>Title</span></th>
+					       <!-- <th md-column><span>Author(s)</span></th>
+					          <th md-column><span>Link to Article</span></th>
+					           <th md-column><span>Summary</span></th>>
+					      </tr>
+					   </thead>-->
+
+				 <tbody md-body>
+				      <tr md-row ng-repeat="item in reference_data">
+				        <td md-cell><p>
+				        	{{item.author}}. <a ng-href="{{item.link}}" >{{item.title}}</a>. {{item.journal}}<BR><I>{{item.summary}}</I></td>
+				        </p> 
+				        <!--<td md-cell>{{item.author}}</td>
+				        <td md-cell><a ng-href="{{item.link}}" id="table-link">{{item.journal}}</a></td>
+				        <td md-cell>{{item.summary}}</td>>-->
+				      </tr>
+				    </tbody>
+					
+				</table>
+
+				</md-table-container>
+	
+		</div>
+
+	
+</div>
+

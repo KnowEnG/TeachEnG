@@ -1,0 +1,142 @@
+<div ng-controller='neighbor-matrixController'>
+	<div layout="row" layout-align="center" class="treeSet md-title">Distance Matrix</div>
+
+<md-button ng-if="need_origin_button" ng-click = "show_origin()" class="md-raised md-primary md-hue-2">{{origin_button}}</md-button>
+<div class="ori-matrix" ng-show="neighbor_origin">
+  <div layout="row" layout-align="center" class="treeSet md-subhead">Original Matrix</div>
+   <md-table-container>
+  <table id="distance-table" md-table ng-model="neighborOriginMatrix" >
+    <thead md-head >
+      <tr md-row>
+        <th md-column>Species</th>
+        <th md-column  ng-repeat="item in neighborOriginMatrix track by $index"><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="item in neighborOriginMatrix track by $index">
+        <td md-cell>
+          {{item.name}}
+        </td>
+        <td md-cell ng-repeat="dist in item.distances track by $index" >
+
+          <div>{{dist}}</div>
+        
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</md-table-container>
+</div>
+
+
+<div class="neighbor-prev-matrix" ng-show="neighbor_prev">
+  <div layout="row" layout-align="center" class="treeSet md-subhead">Previous Matrix</div>
+   <md-table-container>
+  <table id="distance-table" md-table ng-model="neighborPrevMatrix" >
+    <thead md-head >
+      <tr md-row>
+        <th md-column>Species</th>
+        <th md-column  ng-repeat="item in neighborPrevMatrix track by $index"><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="item in neighborPrevMatrix track by $index">
+        <td md-cell>
+          {{item.name}}
+        </td>
+        <td md-cell ng-repeat="dist in item.distances track by $index" >
+
+          <div>{{dist}}</div>
+        
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</md-table-container>
+</div>
+
+
+<div class="new-matrix" ng-show="tree_is_done">
+
+  <div layout="row" layout-align="center" class="treeSet md-subhead" >New Matrix</div>
+
+  
+  <div class="treeSet md-subhead" layout="row" id="sub-inst" layout-align="center center">
+    {{subInstTwo}}
+  </div>
+  <md-table-container ng-model="neighbor_new_matrix">
+  <table id="distance-table" md-table >
+    <thead md-head >
+      <tr md-row>
+        <th md-column >Species</th>
+        <th md-column  ng-repeat="item in neighbor_new_matrix track by $index"><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="(outkey, item) in neighbor_new_matrix track by $index">
+        <td md-cell>
+          {{item.name}}
+        </td>
+        <td md-cell ng-repeat="(key,dist) in item.distances track by $index" >
+
+       
+          <div ng-if="neighbor_new_matrix[outkey].is_solved[key]">{{dist}}</div>
+  
+          <div ng-if="!neighbor_new_matrix[outkey].is_solved[key]" id = "table-input" ><input ng-model="neighbor_new_matrix[outkey].user_input[key]" type="text" check-enter = "neighbor_input_check(key,outkey, neighbor_new_matrix, distMatrix_is_done)"></div>
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</md-table-container>
+
+<div ng-style="fontcolor"id="site-select" class = "treeSet default" layout="row" layout-align="center" ng-hide="hidden || distMatrix_is_done" ng-class="{fade: startFade}">
+        {{info}}
+      </div>
+</div>
+
+<div class="Q-matrix" ng-hide="hide_q">
+<HR>
+  <div layout="row" layout-align="center" class="treeSet md-title" >Q Matrix</div>
+   <md-table-container>
+  <table id="distance-table" md-table ng-model="neighborQmatrix" >
+    <thead md-head >
+      <tr md-row>
+        <th md-column >Species</th>
+        <th md-column  ng-repeat="item in neighborQmatrix "><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="(outkey, item) in neighborQmatrix track by $index">
+        <td md-cell>
+          {{item.name}}
+        </td>
+        <td md-cell ng-repeat="(key, dist) in item.distances track by $index" >
+
+          <div ng-if="neighborQmatrix[outkey].is_solved[key]">{{dist}}</div>
+  
+          <div ng-if="!neighborQmatrix[outkey].is_solved[key]" id = "table-input" ><input ng-model="neighborQmatrix[outkey].user_input[key]" type="text" check-enter = "neighbor_input_check(key,outkey, neighborQmatrix, q_is_done)"></div>
+        
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</md-table-container>
+<div ng-style="fontcolor"id="site-select" class = "treeSet default" layout="row" layout-align="center" ng-hide="hidden || q_is_done" ng-class="{fade: startFade}">
+        {{info}}
+      </div>
+<HR>
+&nbsp;<font color="red">Press the Return key on keyboard after entering each matrix element.</font>
+</div>
+ 
+
+
+
+</div>

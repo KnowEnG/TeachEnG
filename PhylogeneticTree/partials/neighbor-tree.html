@@ -1,0 +1,69 @@
+<div ng-controller='neighbor-treeController'>
+	
+
+	<div layout="row" layout-align="center" class="treeSet md-title">Neighbor-Join Tree</div>
+
+
+
+	<div class = "treeSet"layout="row" layout-align="space-around center">
+
+	
+	<div layout="column" layout-align="center center" ng-repeat = "(key, model) in init_up_nodes" id="DNA-model" ng-model="model" ng-hide="!model.name" ng-style="selected_style[key]">
+		
+		<div class="md-button md-primary md-hue-1" layout="row" style="height:60px" ng-click='click_node(key)'>
+			<img class="image_button" ng-src="./images/{{model.name}}.png" >
+			<div flex>{{model.name}} </div>
+
+		</div>
+		<div layout="row">
+			<div ng-repeat = "letter in model.DNA track by $index" flex ng-style="lettercolor(letter)">{{letter}} </div>
+		</div>
+	
+		
+	</div>
+
+	</div>
+	<div id = "neighbor-tree-container">
+		<svg id="neighbor-svg-layout"  viewbox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">	
+			<circle id = "circle{{key}}" ng-x="{{item[0]}}" ng-y="{{item[1]}}" r="15" fill="Green" ng-repeat="(key,item) in init_points" ng-click="click_node(key)"/>
+
+
+		</svg>
+	</div>
+
+
+
+	<div id="bottom-nodes-set" class = "treeSet"layout="row" layout-align="space-around center">
+
+	
+	<div layout="column" layout-align="center center" ng-repeat = "(key, model) in init_bottom_nodes" id="DNA-model" ng-model="model" ng-hide="!model.name" ng-style="selected_style[key]">
+		
+		<div class="md-button md-primary md-hue-1" layout="row" style="height:60px" ng-click='click_node(key)'>
+			<img class="image_button" ng-src="./images/{{model.name}}.png" >
+			<div flex>{{model.name}} </div>
+
+		</div>
+		<div layout="row">
+			<div ng-repeat = "letter in model.DNA track by $index" flex ng-style="lettercolor(letter)">{{letter}} </div>
+		</div>
+	
+		
+	</div>
+
+	</div>
+
+  <div id="site-select" class = "treeSet" layout="row" layout-align="center" ng-hide="!neighbor_tree_info">
+        {{neighbor_tree_info}}
+      </div>
+
+      <div class="treeSet" layout="row" layout-align="center">
+      	 
+    	{{dist_info}}
+
+        
+
+      </div>
+      
+
+
+</div>

@@ -1,0 +1,105 @@
+<div ng-controller='upgma-matrixController'>
+	<div layout="row" layout-align="center" class="treeSet md-title">Distance Matrix</div>
+
+<div class="ori-matrix" ng-hide="!need_ori" >
+  <div layout="row" layout-align="center" class="treeSet md-subhead">Original Matrix</div>
+   <md-table-container>
+  <table id="distance-table" md-table ng-model="ori_matrix" >
+    <thead md-head >
+      <tr md-row>
+        <th md-column>Species</th>
+        <th md-column  ng-repeat="(key,item) in ori_matrix"><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="(outkey, item) in ori_matrix">
+        <td md-cell>
+          {{item.name}}
+        </td>
+        <td md-cell ng-repeat="(key, distance) in item" ng-if="key!='DNA' && key!='name'">
+
+          <div>{{distance}}</div>
+        
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</md-table-container>
+</div>
+
+
+
+
+<div class="old-matrix" ng-hide="is_solved" >
+<HR>
+  <div layout="row" layout-align="center" class="treeSet md-subhead" ng-hide="is_solved">Previous Matrix</div>
+   <md-table-container>
+  <table id="distance-table" md-table ng-model="old_matrix" >
+    <thead md-head >
+      <tr md-row>
+        <th md-column ng-hide="is_solved">Species</th>
+        <th md-column  ng-repeat="(key,item) in old_matrix"><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="(outkey, item) in old_matrix">
+        <td md-cell>
+          {{item.name}}
+        </td>
+        <td md-cell ng-repeat="(key, distance) in item" ng-if="key!='DNA' && key!='name'">
+
+          <div>{{distance}}</div>
+        
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+</md-table-container>
+<HR>
+</div>
+ 
+
+<div class="new-matrix">
+
+  <div layout="row" layout-align="center" class="treeSet md-subhead" ng-hide="is_solved&&!need_ori">Current Matrix</div>
+
+  
+  <div class="md-subhead" layout="row" id="sub-inst" layout-align="center center">
+    <font color="red">{{subInstTwo}}</font>
+  </div>
+   <div class="md-subhead" layout="row" id="sub-inst" layout-align="center center">
+    <font color="red">{{subInstThree}}</font>
+  </div>
+	<md-table-container >
+  <table id="distance-table" md-table ng-model="matrix">
+    <thead md-head >
+      <tr md-row>
+        <th md-column >Species</th>
+        <th md-column  ng-repeat="(key,item) in matrix"><span>{{item.name}}</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+    	<tr md-row ng-repeat="(outkey, item) in matrix">
+    		<td md-cell>
+    			{{item.name}}
+    		</td>
+    		<td md-cell ng-repeat="(key, distance) in item" ng-if="key!='DNA' && key!='name'">
+
+          <div ng-if="matrix_is_sovled[outkey][key]">{{distance}}</div>
+          <div ng-if="!matrix_is_sovled[outkey][key]" id = "table-input" ><input ng-model="user_input[outkey][key]" type="text" check-enter = "input_check(outkey,key)"></div>
+    		</td>
+
+    	</tr>
+    	
+    </tbody>
+  </table>
+</md-table-container>
+</div>
+  <div ng-style="fontcolor"id="site-select" class = "treeSet default" layout="row" layout-align="center" ng-hide="hidden" ng-class="{fade: startFade}">
+        {{info}}
+      </div>
+</div>

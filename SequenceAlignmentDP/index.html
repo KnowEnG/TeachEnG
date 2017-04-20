@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sequence_alignment_example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/black-tie/jquery-ui.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<script src="./js/sequence_alignment_algorithm.js"></script>
+
+</head>
+<body>
+	<div class="container-fluid">
+	  <BR>
+	  <a href="../" class="btn btn-primary">Go back to Game Selection</a>	
+	  <BR>
+	<div class="row">
+		<div id="title" class="col-md-4 col-md-offset-4">
+			<h3>Sequence Alignment Dynamic Programming Game</h3>
+		</div>
+	</div>
+
+	<div class="row info">
+
+		
+		<div class= "col-xs-4 col-md-4" id="info1">Match Score : <input type="number" id="match_score" value="20"></div>
+		<div class ="col-xs-4 col-md-4" id="info2">Mismatch Score : <input type="number" id="mismatch_score" value="-10"></div>
+		<div class = "col-xs-4 col-md-4" id="info3">Gap Score : <input id="gap_score" type="number" value="-20"></div>
+
+		
+
+
+	</div>
+
+<div class="row">
+		<div class="col-xs-6 col-md-6">
+			<div class="howto">
+				<H3>HOW TO PLAY</H3>
+				<ul>
+				<li> Fill in the dynamic programming matrix below for the Needleman-Wunsch global sequence alignment algorithm.</li> 
+				<li> Click on an empty cell to fill in the score. </li> 
+				<li> Click on a filled cell to see the best sequence alignment up to that cell.</li> 
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-xs-6 col-md-6 level_buttons">
+			<button class="btn btn-success active" id = "level_one">Level 1</button>
+			<button class="btn btn-success " id = "level_two">Level 2</button>
+			<button class="btn btn-success " id = "level_three">Level 3</button>
+			<button class = "btn btn-primary" id="regenerate_sequence">New Game</button>
+			<button class="btn btn-warning" id = "use_score_talbe">Customize Score Table</button>
+			<button class="btn btn-warning" id = "use_fixed_score">Use Simple Scores</button>
+			<button class="btn btn-danger" id = "change_score_table">Update Custom Scores</button>
+
+			<div id = "score_table">
+					<table class="table table-striped">
+						 <thead>
+							 <tr>
+						      <th>#</th>
+						      <th class="letterA">A</th>
+						      <th class="letterC">C</th>
+						      <th class="letterG">G</th>
+						      <th class="letterT">T</th>
+						    </tr>
+						    <tbody id="score_table_body">
+						    	
+						    </tbody>
+
+						 </thead>
+					</table>
+				</div>
+			<span id="info4"></span>
+		</div>
+
+	</div>
+
+	
+
+
+	<div class="container" id = "matrix_container">
+<p id="seq_one_str"></p> <p id="seq_two_str"></p>
+		
+		
+		<div class="row">
+			
+				
+				<div class="container-fluid">
+
+				      <div class="matrix_table">
+				      	<div class="modal">
+				      		
+				      		
+				      		<div class="modal-content" id = "myModal">
+				      			<div class="row" id="not_solved">
+				      				<div class="row">
+				      					<div class="col-md-5" id="check_match">
+				      					<span id="diag">&#8600</span> : match/mismatch
+				      					<font face="Courier New">
+									<div class="row" id="seq_one">
+				      						
+				      					</div>
+				      					<div class="row" id="seq_two">
+				      					
+				      					</div>
+				      					</font>
+				      				</div>
+				      				<div class="col-md-5" id ="gap_in_w">
+				      					<span id="down">&#8595</span> : gap in W
+									<font face="Courier New">
+				      					<div class="row"  id="seq_one">
+				      						
+				      					</div>
+				      					<div class="row" id="seq_two">
+				      						
+				      					</div>
+				      					</font>
+
+				      				</div>
+				      				
+				      				</div>
+
+				      				<div class="row">
+				      					<div class="col-md-5" id = "gap_in_v">
+				      					<span id="right"> &#8594</span> : gap in V
+									<font face="Courier New">
+				      					<div class="row" id="seq_one">
+				      							
+				      					</div>
+				      					<div class="row" id="seq_two">
+				      						
+				      					</div>
+				      					</font>
+				      				</div>
+
+				      				<div class="col-md-5">
+				      						<p>Alignment score </p>
+				      						<input type="text" id="score_max">
+				      					</div>
+
+				      				</div>
+				      				
+								<div class="row">
+									<div class="col-md-4">
+										<button class="btn btn-primary" id="check_score">
+				      					Check Score
+				      					</button>
+									</div>
+									<div class="col-md-4">
+										
+				      				<button class="btn btn-primary" id="go_back">
+				      					Go Back to Table
+				      				</button>
+									</div>
+									<div class="col-md-4">
+										<span id="message"></span>
+									</div>
+				      				
+
+				      				
+
+				      			</div>
+
+				      			</div>
+				      			
+				     		<div class = "row" id="solved">
+				     			Best Alignment Path
+							 <font face="Courier New">
+				     			<div class="row" id="seq_one">
+				     				
+				     			</div>
+
+				     			<div class="row" id="seq_two">
+				     				
+				     			</div>
+							</font>
+				     			<div class="row">
+				     				<button class="btn btn-primary" id="go_back_solved">
+				      					Go Back to Table
+				      				</button>
+				     			</div>
+				      			
+				      		</div>
+
+				      		</div>
+
+				      	
+				      	
+				      	
+				      		
+				      	</div>
+				        
+				      </div>
+				   
+				</div>
+
+
+
+			
+		
+
+		</div>
+
+	</div>
+	
+
+	<BR><BR><BR>
+
+<iframe title="YouTube video player" class="youtube-player" type="text/html" 
+width="700" height="500" src="http://www.youtube.com/embed/eEnvHbtvd5k"
+frameborder="0" allowFullScreen></iframe>
+<HR>
+
+	<a href="http://knoweng.org"><img src="./images/knoweng.png" /></a><BR><BR>
+
+Created by Minji Kim, Yeonsung Kim, and Jun S. Song. <img src="./images/contact.png" >
+	<script src="./js/sequence_matrix.js"></script>
+
+
+
+
+	
+	</div>
+
+
+
+</body>
+
+
+</html>

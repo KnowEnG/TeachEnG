@@ -1,0 +1,233 @@
+<div ng-controller='parsimony-TreeFillController'>
+	
+	
+		
+	<div layout="row" layout-align="center center">
+	 <div class="treeSet md-title">Step 2: Discovering the correct tree</div>
+	  
+	</div>	
+	<div id="tree-body" layout = "column" >
+
+			<div layout="row" layout-align="center" class="md-subhead">Step 2.2: Calculate tree scores for each informative site</div>
+
+			<div class="infoset" layout="row">
+				<div class="letter" flex>Name</div>
+				<div class="letter" flex ng-repeat="(key,value) in info_set">Site {{1*key+1}}</div>
+			</div>
+
+			<div ng-repeat="i in [0,1,2,3]" class = "infoset" layout="row" layout-align="space-around center">
+					<div class="letter" flex >{{tree_model_name[i]}}</div>
+					<div class="letter" flex ng-repeat="letter in info_set" ng-style="lettercolor(letter[i])">{{letter[i]}}</div>
+			</div>
+		
+
+				
+					<div layout="row" layout-align="center" class="treeSet md-title">Three possible trees</div>
+
+			<div class="tree-fill" layout="row" layout-align="space-around center" >
+					<div flex ng-repeat="i in [1,2,3]">
+						 Tree {{i}}
+					</div>
+
+			</div>
+		<div class = "tree-picture" layout="row" layout-xs="column" layout-align="space-around center" >
+			
+			
+			<div ng-style="treeOne" layout="column">
+				<div layout="row" layout-align="space-around center">
+
+					
+					  <div class="md-button md-primary" layout="column" ng-model="tree_letters[0]">
+						<div flex>{{tree_names[0]}}</div>
+					  	<div ng-style="lettercolor(tree_letters[0])" flex>{{tree_letters[0]}} </div>
+					  </div>
+
+
+						<div class="md-button md-primary" layout="column" ng-model="tree_letters[2]">
+						 <div flex>{{tree_names[2]}}</div>
+					  	<div  ng-style="lettercolor(tree_letters[2])" flex>{{tree_letters[2]}} </div>
+					  </div>
+						
+						</div>
+						
+						<div id="svg-container" layout="row" layout-align="center center">
+						<svg id="svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+						</svg>
+						</div>
+
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-primary" layout="column" ng-model="tree_letters[1]">
+					  	<div  ng-style="lettercolor(tree_letters[1])" flex>{{tree_letters[1]}} </div>
+					  	<div flex>{{tree_names[1]}}</div>
+					  </div>
+
+
+						 <div class="md-button md-primary" layout="column" ng-model="tree_letters[3]">
+					  	<div  ng-style="lettercolor(tree_letters[3])" flex>{{tree_letters[3]}} </div>
+
+					  	<div flex>{{tree_names[3]}}</div>
+
+
+							</div>
+
+						
+
+
+						</div>
+
+						</div>
+
+						<div ng-style="treeTwo" layout="column">
+									<div layout="row" layout-align="space-around center">
+
+						
+					  <div  class="md-button md-primary md-hue-1" layout="column" ng-model="tree_letters[0]">
+					  	 <div flex>{{tree_names[0]}}</div>
+					  	<div ng-style="lettercolor(tree_letters[0])" flex>{{tree_letters[0]}} </div>
+					  </div>
+
+
+						 <div  class="md-button md-primary md-hue-1" layout="column" ng-model="tree_letters[1]">
+						 	 <div flex>{{tree_names[1]}}</div>
+					  	<div ng-style="lettercolor(tree_letters[1])" flex>{{tree_letters[1]}} </div>
+					  </div>
+						
+						</div>
+						
+					
+						<div id="svg-container" layout="row" layout-align="center center">
+						<svg id="svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+						</svg>
+						</div>
+
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-primary md-hue-1"  layout="column" ng-model="tree_letters[2]">
+					  	<div ng-style="lettercolor(tree_letters[2])" flex>{{tree_letters[2]}} </div>
+					  	 <div flex>{{tree_names[2]}}</div>
+					  </div>
+
+
+						 <div class="md-button md-primary md-hue-1"   layout="column" ng-model="tree_letters[3]">
+					  	<div ng-style="lettercolor(tree_letters[3])" flex>{{tree_letters[3]}} </div>
+					  	 <div flex>{{tree_names[3]}}</div>
+
+
+							</div>
+
+						
+
+
+						</div>
+
+						</div>
+
+							<div  ng-style="treeThree" layout="column">
+									<div layout="row" layout-align="space-around center">
+
+						
+					  <div class="md-button md-aceent" layout="column" ng-model="tree_letters[0]">
+					  	 <div flex>{{tree_names[0]}}</div>
+					  	<div  ng-style="lettercolor(tree_letters[0])" flex>{{tree_letters[0]}} </div>
+					  </div>
+
+
+						 <div  class="md-button md-aceent" layout="column" ng-model="tree_letters[2]">
+						 	 <div flex>{{tree_names[2]}}</div>
+					  	<div ng-style="lettercolor(tree_letters[2])" flex>{{tree_letters[2]}} </div>
+					  </div>
+						
+						</div>
+						
+						
+						<div id="svg-container" layout="row" layout-align="center center">
+						<svg id="svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+						</svg>
+						</div>
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-aceent" layout="column" ng-model="tree_letters[3]">
+					  	<div  ng-style="lettercolor(tree_letters[3])" flex>{{tree_letters[3]}} </div>
+					  	 <div flex>{{tree_names[3]}}</div>
+					  </div>
+
+
+						 <div class="md-button md-aceent" layout="column" ng-model="tree_letters[1]">
+					  	<div  ng-style="lettercolor(tree_letters[1])" flex>{{tree_letters[1]}} </div>
+					  	 <div flex>{{tree_names[1]}}</div>
+
+
+							</div>
+
+						
+
+
+						</div>
+
+					</div>
+
+			</div>	
+
+			<div layout="row" layout-align="center" class="md-body-2">Tree Scores</div>
+
+			<div class="tree-fill" layout="row" layout-align="space-around center" ng-repeat = "(key,value) in info_set track by $index">
+				<div  class="md-button md-accent" ng-click="change_letters(value)" flex>Site  {{1*key+1}}</div>
+					<div flex='auto' ng-repeat="i in [0,1,2] track by $index">
+						 <input ng-style="wrong[key][i]"  ng-focus="focus_event(i)" ng-change="check_user_input(scores, key, i)" ng-mousedown="change_letters(value)" ng-disabled = "right[key][i]" placeholder = "Site {{1*key+1}}" id="user-input" ng-model="user[key][i]">
+					</div>
+
+			</div>
+			<div class="tree-fill" layout="row" layout-align="space-around center">
+					<div layout="row" layout-align ="start center" id="user-sum" flex-offset="5" flex ng-repeat="i in [0,1,2] track by $index">
+						<div flex>Sum : </div>
+						<div ng-model="sum[i]" flex>{{sum[i]}}</div>
+					</div>
+					
+			</div>
+			<div ng-style="fontcolor"id="site-select" class = "treeSet" layout="row" layout-align="center" ng-hide="!info">
+				{{info}}
+			</div>
+
+				<div layout="column" layout-align="end end">
+				<div class="md-button md-raised md-accent" ng-show="filled" ng-click="end()">Go to Next Step</div>
+			</div>
+
+
+					
+	
+
+
+	
+			
+	
+	</div>
+
+</div>

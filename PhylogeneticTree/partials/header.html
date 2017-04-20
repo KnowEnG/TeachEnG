@@ -1,0 +1,23 @@
+<div ng-controller='HeaderController'>
+
+	
+  <BR>
+  <a href="../" class="md-button md-raised md-accent">Go back to Game Selection</a>
+  <BR>
+	<div layout="row" layout-align="center center">
+		<div ui-sref="app" id="title" class="md-display-1">Phylogenetic Tree Games</div>
+
+	</div>
+		
+
+	
+
+	
+
+	<div class = "game_select" layout="row" layout-align="space-around center">
+	  <md-button ng-click = "startparsimony()" class="md-raised md-primary">Maximum Parsimony Method</md-button>
+	  <md-button nd-disabled="true" ng-click = "startupgma()" class="md-raised md-primary">UPGMA Algorithm</md-button>
+	  <md-button nd-disabled="true" ng-click = "startneighbor()" class="md-raised md-primary">Neighbor-Joining Method</md-button>
+	</div>
+
+</div>
