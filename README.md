@@ -1,4 +1,4 @@
-#Teaching Engine for Genomics
+## Teaching Engine for Genomics
 
 Welcome to TeachEnG, a Teaching Engine for Genomics! 
 
