@@ -7,7 +7,7 @@ TeachEnG provides interactive modules to help students and researchers understan
 Please contact us via email (knoweng@illinois.edu) if you have any questions or suggestions.
 
 ## Link
-http://song.igb.illinois.edu/TeachEnG/
+http://teacheng.illinois.edu/
 
 ## LICENSE
 Artistic License 2.0
