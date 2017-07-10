@@ -1,0 +1,212 @@
+
+
+#title{
+	border: 3px solid green;
+	text-align: center;
+	margin-top: 20px;
+	padding: 4px;
+	font-weight: bold;
+
+}
+
+#title:hover{
+	cursor:pointer;
+}
+
+.game_select{
+	border-bottom: 2px solid green;
+}
+
+
+
+.main-info{
+	margin-top: 100px;
+	text-align: center;
+	color: green;
+}
+
+.main-game-box{
+	
+	width : 750px;
+	
+	
+
+}
+.treeSet{
+	margin-top: 30px;
+
+}
+
+.tree-font > .md-button > div{
+	font-weight: bold;
+	color: black;
+}
+.infoset{
+	margin-top: 15px;
+	font-size: 14pt;
+	font-weight: bold;
+}
+.tree-fill > div{
+	text-align: center;
+	font-weight: bold;
+}
+
+
+#DNA-model{
+	border: 2px solid green;
+	border-radius: 20px;
+
+}
+
+.image_button{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	background-color: white;
+}
+
+.image_button:hover{
+	opacity: 0.2;
+}
+
+.dropped_image{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	opacity: 0.3;
+}
+#distance-table > tbody > tr > td, #distance-table > thead > tr > th{
+	font-weight: bold;
+	font-size: 12pt;
+	text-align: center;
+}
+.md-subhead{
+	margin-top: 20px;
+}
+.tree-picture{
+	margin-top: 10px;
+}
+#site-select{
+	font-size: 20px;
+	font-weight: bold;
+}
+#site-help{
+	margin: 20px 20px 20px 20px;
+}
+
+
+#help-info{
+	font-size: 15px;
+	font-weight: bold;
+	margin: 10px 10px 10px 10px;
+}
+.letter{
+	text-align: center;
+}
+
+#user-input{
+	text-align: center;
+}
+
+#user-sum{
+	text-align: center;
+	font-size: 14pt;
+}
+
+ #distance-table > tbody > tr > td > #table-input > input{
+	width: 50px;
+	text-align: center;
+}
+
+.default{
+    opacity: 1;
+}
+
+.fade{
+    -webkit-transition: opacity 2s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 2s;
+    opacity: 0;
+}
+.old-matrix {
+    transition: 0.5s linear all;
+    opacity: 1;
+}
+.old-matrix.ng-hide {
+    opacity: 0;
+}
+
+.ori-matrix {
+	 transition: 0.5s linear all;
+    opacity: 1;
+}
+.ori-matrix.ng-hide{
+	 opacity: 0;
+}
+.upgma-curr-step{
+	border: 2px solid green;
+}
+#svg-container, #neighbor-svg-container { 
+	 width : 100%;
+	 height : 100%;
+}
+div[class$='-matrix']{
+	margin-bottom: 30px;
+}
+
+#site-modal{
+	position: fixed;
+	top: 15%;
+}
+#svg-layout{ /* svg into : object, img or inline */
+  width: 100%;
+  height: 100%;
+}
+
+#tree-fill-help-svg-layout{ /* svg into : object, img or inline */
+  width: 650px;
+  height: 120px;
+}
+#neighbor-svg-layout{ /* svg into : object, img or inline */
+  width: 630px;
+  height: 350px;
+  display: block;
+  margin: auto;
+}
+
+
+.upgma-end{
+	font-size: 20px;
+	font-weight: bold;
+	color: green;
+}
+
+#software-title{
+	font-weight: bold;
+}
+#reference-title{
+	font-weight: bold;
+}
+#table-link{
+	text-decoration: none;
+	color:green;
+}
+.parsimony-game-box{
+	margin : 0 auto;
+    
+}
+
+#reference a{
+	text-decoration: none;
+}
+#reference p{
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size: 12pt;
+}
+
+#reference .md-table tbody tr:nth-child(2n+1) {
+  background-color: #daffdb;
+}

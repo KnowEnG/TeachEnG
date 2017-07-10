@@ -1,0 +1,125 @@
+<div ng-controller='parsimony-StartController'>
+
+
+<div class="parsimony-game-box">
+	<div layout="row" layout-align="center center">
+  <div class="treeSet md-title">Guess the correct phylogenetic tree by grouping similar species together. <BR><font size =3>(<I>Your initial guess will be compared with the maximum parsimony tree later</I>)</font> </div>
+  
+</div>		
+<div layout="column" style='height:150px;'>
+	
+	<div class = "treeSet"layout="row" layout-align="space-around center">
+
+	<div layout="column" layout-align="center center" ng-repeat = "model in sets"  id="DNA-model" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="model" jqyoui-draggable="{animate:true, placeholder:'keep'}" ng-hide="!model.title" >
+		
+		<div class="md-button md-primary md-hue-1" layout="row" style="height:60px">
+			<img class="image_button" ng-src="./images/{{model.title}}.png" >
+			<div flex>{{model.title}} </div>
+
+		</div>
+		<div layout="row">
+			<div ng-repeat = "letter in model.DNA track by $index" flex ng-style="lettercolor(letter)">{{letter}} </div>
+		</div>
+	
+		
+	</div>
+
+	
+	</div>
+
+	
+
+</div>
+
+<div layout="row" layout-align="center center">
+  <div class="md-subhead"><font color="red">Drag the above species to appropriate tree leaves. If you make a mistake, you can overwrite a leaf with a new species.</font></div>
+  
+</div>	
+	
+
+<div layout="column">
+	
+	<div class = "treeSet tree-font"layout="row" layout-align="space-around center">
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[0]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[0]" jqyoui-draggable ng-hide="!drop_set[0].title">
+  	<img class="dropped_image" ng-src="./images/{{drop_set[0].title}}.png" >
+  	<div flex>{{drop_set[0].title}} </div>
+		<div flex>{{drop_set[0].DNA}} </div>
+  </div>
+
+  
+	</div>
+
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[2]" jqyoui-droppable style='height:70px;'>
+  		<div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[2]" jqyoui-draggable ng-hide="!drop_set[2].title">
+  	  		<img class="dropped_image" ng-src="./images/{{drop_set[2].title}}.png" >
+  			<div flex>{{drop_set[2].title}} </div>
+			<div flex>{{drop_set[2].DNA}} </div>
+  		</div>
+	</div>
+
+	
+	</div>
+	
+	<div id="svg-container" layout="row" layout-align="space-around center">
+	<svg id="svg-layout"viewbox="0 0 750 60" xmlns="http://www.w3.org/2000/svg">
+	     <line x1="192" y1="0" x2="282" y2="30"
+      stroke-width="2" stroke="black"/>
+	   <line x1="192" y1="60" x2="282" y2="30"
+      stroke-width="2" stroke="black"/>
+   <line x1="282" y1="30" x2="472" y2="30"
+      stroke-width="2" stroke="black"/>
+   <line x1="472" y1="30" x2="562" y2="0"
+      stroke-width="2" stroke="black"/>
+         <line x1="472" y1="30" x2="562" y2="60"
+      stroke-width="2" stroke="black"/>
+	</svg>
+	</div>
+
+	<div class="tree-font" layout="row" layout-align="space-around center">
+	
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[1]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[1]" jqyoui-draggable ng-hide="!drop_set[1].title">
+  	  	<img class="dropped_image" ng-src="./images/{{drop_set[1].title}}.png" >
+  	<div flex>{{drop_set[1].title}} </div>
+		<div flex>{{drop_set[1].DNA}} </div>
+  </div>
+</div>
+
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[3]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[3]" jqyoui-draggable ng-hide="!drop_set[3].title">
+  	  	<img class="dropped_image" ng-src="./images/{{drop_set[3].title}}.png" >
+  	<div flex>{{drop_set[3].title}} </div>
+		<div flex>{{drop_set[3].DNA}} </div>
+  </div>
+</div>
+
+
+
+		</div>
+
+	
+
+</div>
+	
+	<div layout="column" layout-align="start start">
+		<div class="md-button md-raised md-primary" ng-click="refresh()">New Game</div>
+		
+	</div>
+
+
+	<div layout="column" layout-align="end end">
+		<div class="md-button md-raised md-accent" ng-show="done" ng-click="site_fill()">Go to Next Step</div>
+	</div>
+
+	
+</div>
+</div>
+
+
+<BR><BR>
+<iframe   id = "parsimony-iframe"  width="1280" height="720" src="https://www.youtube.com/embed/5z8v8ESZeyo?rel=0" frameborder="0" allowfullscreen></iframe>
+

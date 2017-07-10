@@ -1,0 +1,36 @@
+<div ng-controller='upgmaController'>
+	<div class="treeSet md-title" layout="row" id="upgma-inst" layout-align="center center">
+	  <font color= "blue"> {{upgmaInst}}</font>
+	</div>
+
+	<div class="treeSet md-subhead" layout="row" id="sub-inst" layout-align="center center">
+	<font color="red"><div id="inst">{{subInst}}</div>
+			<span mathjax-bind="equation"></span></font>
+	</div>
+	
+
+<div layout="row" layout-xs="column">
+	
+
+  <div id="matrix-view" flex ui-view="matrix">
+  
+  </div>
+  <div flex="10"></div>
+  <div id="tree-view" flex ui-view="tree">
+  
+  </div>
+
+  
+</div>
+
+<div layout="column" layout-align="start start">
+		<div class="md-button md-raised md-primary" ng-click="upgmarefresh()">New Game</div>
+		
+	</div>
+
+<BR>
+<BR>
+	
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/XCcBT_yUk4I?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+

@@ -1,0 +1,40 @@
+<div ng-controller='neighborController'>
+	<div class="treeSet md-title" layout="row" id="upgma-inst" layout-align="center center">
+	  <font color= "blue"> {{neighborInst}}</font>
+	</div>
+
+	<div class="treeSet md-subhead" layout="row" id="sub-inst" layout-align="center center">
+		
+		<div style="overflow-x:auto;">
+			<font color="red">{{neighborsubInst}}
+			<span mathjax-bind="neighborEquation"></span></font>
+		
+	
+		</div>
+			
+	
+
+	</div>
+	
+
+<div layout="row" layout-xs="column">
+	
+
+  <div id="matrix-view" flex ui-view="matrix">
+  
+  </div>
+  <div flex="10"></div>
+  <div id="graph-view" flex ui-view="graph">
+  
+  </div>
+
+  
+</div>
+
+<div layout="column" layout-align="start start">
+		<div class="md-button md-raised md-primary" ng-click="neighborrefresh()">New Game</div>
+		
+	</div>
+<BR><BR>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/2oDzy-OcWTw?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>

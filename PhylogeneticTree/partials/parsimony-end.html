@@ -1,0 +1,157 @@
+<div ng-controller='parsimony-EndController'>
+	<div layout = "column" >
+		<div layout="row" layout-align="center" class="treeSet md-title">Your Tree</div>
+		<div layout="row" layout-align="center" class="md-subhead"> Your Tree score : {{user_score}}</div>
+		
+
+<div layout="column">
+	
+	<div layout="row" layout-align="space-around center">
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[0]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[0]" jqyoui-draggable ng-hide="!drop_set[0].title">
+  	<img class="dropped_image" ng-src="./images/{{drop_set[0].title}}.png" >
+  	<div flex>{{drop_set[0].title}} </div>
+		<div flex>{{drop_set[0].DNA}} </div>
+  </div>
+</div>
+
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[2]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[2]" jqyoui-draggable ng-hide="!drop_set[2].title">
+  	<img class="dropped_image" ng-src="./images/{{drop_set[2].title}}.png" >
+  	<div flex>{{drop_set[2].title}} </div>
+		<div flex>{{drop_set[2].DNA}} </div>
+  </div>
+</div>
+
+	
+	</div>
+	
+	
+	<div id="svg-container" layout="row" layout-align="space-around center">
+	<svg id="svg-layout"viewbox="0 0 750 60" xmlns="http://www.w3.org/2000/svg">
+	     <line x1="192" y1="0" x2="282" y2="30"
+      stroke-width="2" stroke="black"/>
+	   <line x1="192" y1="60" x2="282" y2="30"
+      stroke-width="2" stroke="black"/>
+   <line x1="282" y1="30" x2="472" y2="30"
+      stroke-width="2" stroke="black"/>
+   <line x1="472" y1="30" x2="562" y2="0"
+      stroke-width="2" stroke="black"/>
+         <line x1="472" y1="30" x2="562" y2="60"
+      stroke-width="2" stroke="black"/>
+	</svg>
+	</div>
+
+	<div layout="row" layout-align="space-around center">
+	
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[1]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[1]" jqyoui-draggable ng-hide="!drop_set[1].title">
+  	<img class="dropped_image" ng-src="./images/{{drop_set[1].title}}.png" >
+  	<div flex>{{drop_set[1].title}} </div>
+		<div flex>{{drop_set[1].DNA}} </div>
+  </div>
+</div>
+
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="drop_set[3]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="drop_set[3]" jqyoui-draggable ng-hide="!drop_set[3].title">
+  	<img class="dropped_image" ng-src="./images/{{drop_set[3].title}}.png" >
+  	<div flex>{{drop_set[3].title}} </div>
+		<div flex>{{drop_set[3].DNA}} </div>
+  </div>
+</div>
+
+
+
+		</div>
+
+	
+
+</div>
+	
+		<div layout="row" layout-align="center" class="treeSet md-title">Maximum Parsimony Tree</div>
+		<div layout="row" layout-align="center" class="md-subhead">Minimum Tree Score : {{min}}</div>
+
+<div layout="column">
+	
+	<div layout="row" layout-align="space-around center">
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="TreeSet[0]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="TreeSet[0]" jqyoui-draggable ng-hide="!TreeSet[0].title">
+  	<img class="dropped_image" ng-src="./images/{{TreeSet[0].title}}.png" >
+  	<div flex>{{TreeSet[0].title}} </div>
+		<div flex>{{TreeSet[0].DNA}} </div>
+  </div>
+</div>
+
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="TreeSet[2]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="TreeSet[2]" jqyoui-draggable ng-hide="!TreeSet[2].title">
+  	  	<img class="dropped_image" ng-src="./images/{{TreeSet[2].title}}.png" >
+
+  	<div flex>{{TreeSet[2].title}} </div>
+		<div flex>{{TreeSet[2].DNA}} </div>
+  </div>
+</div>
+
+	
+	</div>
+	
+	
+	<div id="svg-container" layout="row" layout-align="space-around center">
+	<svg id="svg-layout"viewbox="0 0 750 60" xmlns="http://www.w3.org/2000/svg">
+	     <line x1="192" y1="0" x2="282" y2="30"
+      stroke-width="2" stroke="black"/>
+	   <line x1="192" y1="60" x2="282" y2="30"
+      stroke-width="2" stroke="black"/>
+   <line x1="282" y1="30" x2="472" y2="30"
+      stroke-width="2" stroke="black"/>
+   <line x1="472" y1="30" x2="562" y2="0"
+      stroke-width="2" stroke="black"/>
+         <line x1="472" y1="30" x2="562" y2="60"
+      stroke-width="2" stroke="black"/>
+	</svg>
+	</div>
+
+	<div layout="row" layout-align="space-around center">
+	
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="TreeSet[1]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="TreeSet[1]" jqyoui-draggable ng-hide="!TreeSet[1].title">
+  	  	<img class="dropped_image" ng-src="./images/{{TreeSet[1].title}}.png" >
+
+  	<div flex>{{TreeSet[1].title}} </div>
+		<div flex>{{TreeSet[1].DNA}} </div>
+  </div>
+</div>
+
+
+	<div ng-disabled="true" class="md-button md-raised md-primary" data-drop="true" data-jqyoui-options ng-model="TreeSet[3]" jqyoui-droppable style='height:70px;'>
+  <div layout="column" data-drag="false" data-jqyoui-options ng-model="TreeSet[3]" jqyoui-draggable ng-hide="!TreeSet[3].title">
+  	  	<img class="dropped_image" ng-src="./images/{{TreeSet[3].title}}.png" >
+
+  	<div flex>{{TreeSet[3].title}} </div>
+		<div flex>{{TreeSet[3].DNA}} </div>
+  </div>
+</div>
+
+
+
+		</div>
+
+	
+
+</div>
+<div id="site-select" class = "treeSet" layout="column" layout-align="center center" ng-hide="!info">
+			
+				<div ng-style="fontcolor" flex> {{info}}</div>
+	</div>
+
+	<div layout="column" layout-align="start start">
+		<div class="md-button md-raised md-primary" ng-click="refresh()">New Game</div>
+	</div>
+
+	
+	</div>
+</div>

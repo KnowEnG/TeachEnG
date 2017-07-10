@@ -1,0 +1,38 @@
+<div ng-controller='parsimony-SiteFillController'>
+	
+	
+<div layout="row" layout-align="center center">
+  <div class="treeSet md-title">Step 2: Discovering the correct tree</div>
+  
+</div>			
+
+	<div layout = "column" >
+		<div layout="row" layout-align="center" class="md-subhead">Step 2.1: Choose the informative sites</div>
+			<div id = "site-select" class = "treeSet"layout="row" layout-align="space-around center" ng-repeat="model in drop_set">
+				<div flex-offset="15" flex="25">{{model.title}}</div>
+				<div flex ng-repeat="letter in model.DNA track by $index" ng-style="lettercolor(letter)">{{letter}}</div>
+			</div>
+
+			<div id = "site-select" class="treeSet" layout="row" layout-align = "space-around center">
+				<div flex-offset="15" flex = "25"></div>
+				<div flex ng-repeat="i in site_index">
+				<md-checkbox aria-label = "i" ng-checked="site_checked(i, selected)" ng-click="site_clicked(i, selected)">
+	             	
+	              </md-checkbox>
+				</div>
+			</div>
+
+			<div ng-style="fontcolor" id="site-select" class = "treeSet" layout="row" layout-align="center" ng-hide="!info">
+				{{info}}
+			</div>
+
+			
+	</div>
+
+	<div layout="column" layout-align="end end">
+		<div class="md-button md-raised md-accent" ng-show="check_result(keys, selected)" ng-click="tree_fill()">Go to Next Step</div>
+	</div>
+
+
+
+</div>

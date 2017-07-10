@@ -1,0 +1,176 @@
+<md-dialog id="site-modal">
+	
+
+
+<div id = "site-help" layout="row">
+	<div ng-style="treeOne" layout="column">
+				<div layout="row" layout-align="space-around center">
+
+					
+					  <div class="md-button md-primary" layout="column" ng-model="drop_set[0].DNA[temp_site_index]">
+						<div flex>{{drop_set[0].title}}</div>
+					  	<div ng-style="lettercolor(drop_set[0].DNA[temp_site_index])" flex>{{drop_set[0].DNA[temp_site_index]}} </div>
+					  </div>
+
+
+						<div class="md-button md-primary" layout="column" ng-model="drop_set[2].DNA[temp_site_index]">
+						 <div flex>{{drop_set[2].title}}</div>
+					  	<div  ng-style="lettercolor(drop_set[2].DNA[temp_site_index])" flex>{{drop_set[2].DNA[temp_site_index]}} </div>
+					  </div>
+						
+						</div>
+						
+						<div id="svg-container" layout="row" layout-align="center center">
+						<svg id="svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+						</svg>
+						</div>
+
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-primary" layout="column" ng-model="drop_set[1].DNA[temp_site_index]">
+					  	<div  ng-style="lettercolor(drop_set[1].DNA[temp_site_index])" flex>{{drop_set[1].DNA[temp_site_index]}} </div>
+					  	<div flex>{{drop_set[1].title}}</div>
+					  </div>
+
+
+						 <div class="md-button md-primary" layout="column" ng-model="drop_set[3].DNA[temp_site_index]">
+					  	<div  ng-style="lettercolor(drop_set[3].DNA[temp_site_index])" flex>{{drop_set[3].DNA[temp_site_index]}} </div>
+
+					  	<div flex>{{drop_set[3].title}}</div>
+
+
+							</div>
+
+						
+
+
+						</div>
+
+						</div>
+
+						<div ng-style="treeTwo" layout="column">
+									<div layout="row" layout-align="space-around center">
+
+						
+					  <div  class="md-button md-primary md-hue-1" layout="column" ng-model="drop_set[0].DNA[temp_site_index]">
+					  	 <div flex>{{drop_set[0].title}}</div>
+					  	<div ng-style="lettercolor(drop_set[0].DNA[temp_site_index])" flex>{{drop_set[0].DNA[temp_site_index]}} </div>
+					  </div>
+
+
+						 <div  class="md-button md-primary md-hue-1" layout="column" ng-model="drop_set[1].DNA[temp_site_index]">
+						 	 <div flex>{{drop_set[1].title}}</div>
+					  	<div ng-style="lettercolor(drop_set[1].DNA[temp_site_index])" flex>{{drop_set[1].DNA[temp_site_index]}} </div>
+					  </div>
+						
+						</div>
+						
+					
+						<div id="svg-container" layout="row" layout-align="center center">
+						<svg id="svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+						</svg>
+						</div>
+
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-primary md-hue-1"  layout="column" ng-model="drop_set[2].DNA[temp_site_index]">
+					  	<div ng-style="lettercolor(drop_set[2].DNA[temp_site_index])" flex>{{drop_set[2].DNA[temp_site_index]}} </div>
+					  	 <div flex>{{drop_set[2].title}}</div>
+					  </div>
+
+
+						 <div class="md-button md-primary md-hue-1"   layout="column" ng-model="drop_set[3].DNA[temp_site_index]">
+					  	<div ng-style="lettercolor(drop_set[3].DNA[temp_site_index])" flex>{{drop_set[3].DNA[temp_site_index]}} </div>
+					  	 <div flex>{{drop_set[3].title}}</div>
+
+
+							</div>
+
+						
+
+
+						</div>
+
+						</div>
+
+							<div  ng-style="treeThree" layout="column">
+									<div layout="row" layout-align="space-around center">
+
+						
+					  <div class="md-button md-aceent" layout="column" ng-model="drop_set[0].DNA[temp_site_index]">
+					  	 <div flex>{{drop_set[0].title}}</div>
+					  	<div  ng-style="lettercolor(drop_set[0].DNA[temp_site_index])" flex>{{drop_set[0].DNA[temp_site_index]}} </div>
+					  </div>
+
+
+						 <div  class="md-button md-aceent" layout="column" ng-model="drop_set[2].DNA[temp_site_index]">
+						 	 <div flex>{{drop_set[2].title}}</div>
+					  	<div ng-style="lettercolor(drop_set[2].DNA[temp_site_index])" flex>{{drop_set[2].DNA[temp_site_index]}} </div>
+					  </div>
+						
+						</div>
+						
+						
+						<div id="svg-container" layout="row" layout-align="center center">
+						<svg id="svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+						</svg>
+						</div>
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-aceent" layout="column" ng-model="drop_set[3].DNA[temp_site_index]">
+					  	<div  ng-style="lettercolor(drop_set[3].DNA[temp_site_index])" flex>{{drop_set[3].DNA[temp_site_index]}} </div>
+					  	 <div flex>{{drop_set[3].title}}</div>
+					  </div>
+
+
+						 <div class="md-button md-aceent" layout="column" ng-model="drop_set[1].DNA[temp_site_index]">
+					  	<div  ng-style="lettercolor(drop_set[1].DNA[temp_site_index])" flex>{{drop_set[1].DNA[temp_site_index]}} </div>
+					  	 <div flex>{{drop_set[1].title}}</div>
+
+
+							</div>
+
+						
+
+
+						</div>
+
+					</div>
+
+			</div>
+
+					
+							
+					<div id="help-info" class = "treeSet" layout="row" layout-align="center">
+						The three trees &nbsp <span ng-style="fontcolor">{{site_exp}}</span> &nbsp needed to explain this site.
+					</div>
+					
+
+</md-dialog>

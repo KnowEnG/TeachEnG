@@ -1,0 +1,353 @@
+<html lang="en">
+
+<head>
+	<!-- Force latest IE rendering engine or ChromeFrame if installed -->
+	<!--[if IE]>
+	<script src="js/intro.js"></script>
+	<link rel="stylesheet" href="css/introjs.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+	<meta charset="utf-8">
+	<title>TeachEnG</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="css/keen-dashboards.css">
+	<link rel="stylesheet" href="css/teacheng.css">
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+</head>
+
+<body class="application" >
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#m-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="m-nav" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="http://www.knoweng.org">KnowEnG</a>
+                </li>
+                <li class="main-nav"><a href="index.html">Home</a>
+                </li>
+                <li class="main-nav"><a href="#SEQ">Sequence Alignment</a></li>
+                <li class="main-nav"><a href="#SEQDP">Needleman-Wunsch</a></li>
+                <li class="main-nav"><a href="#PHYLO">Phylogenetic Tree</a></li>
+                <li class="main-nav"><a href="https://github.com/KnowEnG/TeachEnG">Source Code</a></li>
+                <li id="help"><a href="#help">Help</a>
+               	<li id="cite"><a href="#cite">How to cite</a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="header-top">
+            <div class="col-sm-4" style="text-align: left;">
+                    <a href="http://www.knoweng.org" target="_blank"><img src="http://education.knoweng.org/clustereng/img/knoweng_logo.png">
+                    </a>
+            </div>
+            <div class="col-sm-4" style="text-align: center;">
+                    <h1>TeachEnG</h1>
+                    <h2 id="sub-title"><i>Teaching Engine for Genomics</i></h2>
+            </div>
+            <div class="col-sm-4" style="text-align: right;">
+                    <a href="http://datascience.nih.gov/bd2k" target="_blank"><img src="http://education.knoweng.org/clustereng/img/NIH_BD2K.png" width=100 height=100>
+                    </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	<div class="row" id="help-info">
+	<HR>
+		<div class="col-md-6 col-md-offset-3">
+			Welcome to TeachEnG, a Teaching Engine for Genomics!  
+	<br><br>
+TeachEnG provides interactive modules to help students and researchers understand key bioinformatics concepts.  The current version includes sequence alignment and phylogenetic tree reconstruction algorithms, with selective tutorials.  
+<br><br>
+Please contact us via email (knoweng@illinois.edu) if you have any questions or suggestions.
+
+		</div>
+		
+	</div>
+
+	<div class="row" id="cite-info">
+			<HR>
+				<div class="col-md-6 col-md-offset-3">
+					M. Kim, Y. Kim, L. Qian, J.S. Song. TeachEnG: a Teaching Engine for Genomics. Bioinformatics, (2017). BIORXIV/2017/111054
+				</div>
+		
+	</div>
+
+
+	
+	<div id="main" class="container-fluid">
+		<div id="SEQ" class="row">
+			<div class="col-sm-12">
+				<div class="chart-wrapper">
+					<div class="chart-title" id="main-head" >
+						<a href="./SequenceAlignment">Sequence Alignment</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Overview
+					</div>
+					<div class="chart-stage">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 img_box">
+								<a href="./SequenceAlignment"><img src="./img/SeqAlign_Pic.png" alt=""></a>
+							</div>
+						</div>
+							
+					</div>
+					<div class="chart-notes">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Description
+					</div>
+					<div class="chart-stage">
+						
+							Rearrange two sequences to get as many matches and as few mismatches and gaps as possible. 
+						
+							
+					</div>
+					<div class="chart-stage">
+						<div>
+							<a href="./SequenceAlignment" class="btn btn-primary btn-lg">Play</a>
+						</div>
+					</div>	
+				</div>
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Instructional Material
+					</div>
+					<div class="chart-stage">
+						
+							<a href="./LectureNotes/SequenceAlignment1_Intro.pdf">Introduction to Sequence Alignment</a>
+							
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div id = "SEQDP" class="row">
+			<div class="col-sm-12">
+				<div  class="chart-wrapper">
+					<div class="chart-title" id="main-head">
+						<a href="./SequenceAlignmentDP">Sequence Alignment: Needleman-Wunsch Algorithm</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="chart-wrapper" >
+					<div class="chart-title">
+						Overview
+					</div>
+					<div class="chart-stage">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 img_box">
+								<a href="./SequenceAlignmentDP"><img src="./img/NW_Pic.png" alt=""></a>
+							</div>
+						</div>
+							
+					</div>
+					<div class="chart-notes">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Description
+					</div>
+					<div class="chart-stage">
+						
+							Fill out the dynamic programming matrix in Needleman-Wunsch global sequence alignment algorithm.
+						
+							
+					</div>
+					<div class="chart-stage">
+						<div>
+							<a href="./SequenceAlignmentDP" class="btn btn-primary btn-lg">Play</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Instructional Material
+					</div>
+					<div class="chart-stage">
+					        <UL>
+					                <LI><a href="./LectureNotes/SequenceAlignment2_SubstitutionMatrix.pdf">Substitution Matrix</a></LI>
+							<LI><a href="./LectureNotes/SequenceAlignment3_DynamicProgramming.pdf">Dynamic Programming</a></LI>
+							<LI><a href="./LectureNotes/SequenceAlignment4_NeedlemanWunsch.pdf">Needleman-Wunsch & Smith-Waterman</a></LI>
+							<LI><a href="http://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1">vlab.amrita.edu</a></LI>
+						</UL>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+		<div id="PHYLO" class="row">
+			<div class="col-sm-12">
+				<div class="chart-wrapper">
+					<div class="chart-title" id="main-head">
+						<a href="./PhylogeneticTree">Phylogenetic Tree Reconstruction</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="chart-wrapper" >
+					<div class="chart-title">
+						Overview
+					</div>
+					<div class="chart-stage">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 img_box">
+								<a href="./PhylogeneticTree"><img src="./img/UPGMA_Pic.png" alt=""></a>
+							</div>
+
+						</div>
+							
+					</div>
+					<div class="chart-notes">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-4">
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Description
+					</div>
+					<div class="chart-stage">
+						
+							Reconstruct phylogenetic trees via the maximum parsimony, Unweighted Paired Group Method with Arithmetic mean (UPGMA), or Neighbor-Joining method. 
+						
+							
+					</div>
+					<div class="chart-stage">
+						<div>
+							<a href="./PhylogeneticTree" class="btn btn-primary btn-lg">Play</a>
+						</div>
+					</div>
+				</div>
+				<div class="chart-wrapper">
+					<div class="chart-title">
+						Instructional Material
+					</div>
+					<div class="chart-stage">
+					  <UL>
+					                <LI><a href="./LectureNotes/PhylogeneticTree1_MaximumParsimony.pdf">Phylogenetic Trees & Maximum Parsimony</a></LI>
+							<LI><a href="./LectureNotes/PhylogeneticTree2_UPGMA.pdf">UPGMA</a></LI>
+							<LI><a href="./LectureNotes/PhylogeneticTree3_NJ.pdf">Neighbor-Joining</a></LI>
+					  </UL>		
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+		</div>
+
+		<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
+	</div>
+	<div id="footer"></div>
+	<script>
+		$(function(){
+			
+			$("#footer").load("footer.html");
+			
+		});
+
+    	$(".main-nav").on("click", function(){
+ 				$("#main").show();  
+                $("#help-info").css('display' , 'none');
+                 $("#cite-info").css('display' , 'none');
+    	});
+        
+            $("#help").on("click", function(){
+                $("#main").hide();  
+                $("#help-info").css('display', 'inline-block');
+                $("#cite-info").css('display' , 'none');
+
+            });
+
+            $("#cite").on("click", function(){
+                $("#main").hide();  
+                $("#help-info").css('display', 'none');
+                $("#cite-info").show();
+            });
+	</script>
+
+
+	
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11263737; 
+var sc_invisible=1; 
+var sc_security="18d0d218"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web stats"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11263737/0/18d0d218/1/" alt="web
+stats"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

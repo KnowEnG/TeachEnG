@@ -1,0 +1,60 @@
+
+	
+	<div layout="row" layout-align="space-around center">
+
+					
+					  <div class="md-button md-primary" layout="column" ng-model="letter[0]">
+					  	<div ng-style="lettercolor(letter[0])" flex>{{letter[0]}} </div>
+					  </div>
+
+
+						<div class="md-button md-primary" layout="column" ng-model="letter[1]">
+					  	<div  ng-style="lettercolor(letter[1])" flex>{{letter[1]}} </div>
+					  </div>
+						
+						</div>
+						
+						<div id="tree-svg-container" layout="row" layout-align="center center">
+						<svg id="tree-fill-help-svg-layout" viewbox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+						     <line x1="80" y1="0" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+						   <line x1="80" y1="50" x2="100" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="100" y1="25" x2="150" y2="25"
+					      stroke-width="2" stroke="black"/>
+					   <line x1="150" y1="25" x2="170" y2="0"
+					      stroke-width="2" stroke="black"/>
+					         <line x1="150" y1="25" x2="170" y2="50"
+					      stroke-width="2" stroke="black"/>
+
+					      <circle ng-hide="mutation_one" cx="100" cy="25" r="4" fill="red"></circle>
+					       <circle ng-hide="mutation_two" cx="150" cy="25" r="4" fill="red"></circle>
+						</svg>
+						</div>
+
+						<div layout="row" layout-align="space-around center">
+					 <div class="md-button md-primary" layout="column" ng-model="letter[2]">
+					  	<div  ng-style="lettercolor(letter[2])" flex>{{letter[2]}} </div>
+					  </div>
+
+
+						 <div class="md-button md-primary" layout="column" ng-model="letter[3]">
+					  	<div  ng-style="lettercolor(letter[3])" flex>{{letter[3]}} </div>
+
+			
+
+
+							</div>
+
+						
+
+
+						</div>
+
+				
+							
+					<div id="help-info" class = "treeSet" layout="row" layout-align="center">
+						{{tree_exp}}
+					</div>
+		</div>
+
