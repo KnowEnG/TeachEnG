@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sequence Alignment Game</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/black-tie/jquery-ui.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="./js/stopwatch.js"></script>
+	<script src="./js/sequence_alignment_algorithm.js"></script>
+
+</head>
+<body>
+	<div class="container-fluid">
+	<BR>
+	<a href="../" class="btn btn-primary">Go back to Game Selection</a>  
+	<BR>	
+	<div class="row">
+		<div id="title" class="col-md-4 col-md-offset-4">
+			
+			<h3>Sequence Alignment Game</h3>
+		</div>
+	</div>
+
+	<div class="row info">
+		
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="howto">
+	<font color="blue"><H3> HOW TO PLAY</H3>  
+				  <ul><li>Try to get as many matches and as few mismatches and gaps as possible</li> 
+				    <li>Drag a nucleotide to the right to add a gap.</li>
+				    <li>Drag to the left to remove a gap.</li>
+				    <li>A gap appearing in both sequences at the same location will be automatically removed.</li>
+</ul> </font> 
+				
+				
+			
+
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="howto level_exp">
+					Level 1. Length: 10, Probability of mutation: 20%, Maximum # of deletions: 2 <br>
+					Level 2. Length: 12, Probability of mutation: 30%, Maximum # of deletions: 3 <br>
+					Level 3. Length: 15, Probability of mutation: 40%, Maximum # of deletions: 4 <br>
+				</div>
+
+		</div>
+	
+		
+	</div>
+
+
+		<div class="row level_buttons">
+			<div class="col-md-6">
+				<button class="btn btn-success" id = "level_one">Level 1</button>
+			<button class="btn btn-success " id = "level_two">Level 2</button>
+			<button class="btn btn-success " id = "level_three">Level 3</button>
+			<button class="btn btn-warning" id = "use_score_talbe">Customize Score Table</button>
+			<button class="btn btn-warning" id = "use_fixed_score">Use Simple Scores</button>
+			<button class="btn btn-danger" id = "change_score_table">Update Custom Scores</button>
+			
+		
+			</div>
+			
+
+	
+					<div class="col-md-2">
+					  <div class = "col-md-3" class="info5"><button class = "btn btn-primary" id="regenerate_sequence">New Game</button></div>
+
+						
+					</div>
+
+				
+				
+				<div class="col-md-4">
+					<div id="result">
+						
+					</div>		
+				</div>
+
+		
+		</div>
+		<div class="row info">
+			<H4>If you wish, you can change the default <font color="green">Match</font>, <font color="#809fff">Mismatch</font>, and <font color="red">Gap</font> scores in the below textboxes.</H4></div>
+		<div class="row info">
+				<div class='col-md-4' id = "score_table">
+					<table class="table table-striped">
+						 <thead>
+							 <tr>
+						      <th>#</th>
+						      <th class="letterA">A</th>
+						      <th class="letterC">C</th>
+						      <th class="letterG">G</th>
+						      <th class="letterT">T</th>
+						    </tr>
+						    <tbody id="score_table_body">
+						    	
+						    </tbody>
+
+						 </thead>
+					</table>
+				</div>
+				<div class= "col-md-2" id="info1">Match Score <input type="number" id="match_score" value="20"></div>
+			<div class ="col-md-2" id="info2">Mismatch Score<input type="number" id="mismatch_score" value="-10"></div>
+			<div class = "col-md-2" id="info3">Gap Score<input id="gap_score" type="number" value="-20"></div>
+
+			<div class = "col-md-2" id="info4"></div>
+			<div class="col-md-2" id="info5"></div>
+
+			</div>
+
+		<div class="container" id="sequence_table">
+		<p id="seq_one_str"></p> <p id="seq_two_str"></p>	
+
+		<div class="row" >
+
+			<div class="col-md-12" id="origin">
+				
+
+			</div>
+		
+			
+		</div>
+		<div class="row">
+
+			<div class="col-md-12" id="mutate">
+				
+
+			</div>
+			
+		</div>
+		
+	
+
+		<div class="row">
+
+			<div class="col-md-12" id="score">
+				
+
+			</div>
+			
+		</div>
+
+		<div class="row">
+			<div class="col-md-12" id="score_summing">
+				
+
+			</div>
+			<font color="darkblue"><H4>Your cumulative score</H4></font>	
+
+		</div>
+	
+
+		</div>
+	
+
+
+
+
+
+
+
+	
+	
+	
+
+
+<BR>
+<BR>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/BM6191o3f0c?rel=0" frameborder="0" allowfullscreen></iframe>
+<HR>
+
+
+<a href="http://knoweng.org"><img src="./images/knoweng.png" /></a><BR>
+
+
+Created by Minji Kim, Yeonsung Kim, Lei Qian, and Jun S. Song. <img src="./images/contact.png" >
+
+<script src="./js/sequence_alignment_mouse.js"></script>
+	
+	</div>
+
+
+
+</body>
+
+
+</html>
