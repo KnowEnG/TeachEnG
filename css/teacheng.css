@@ -1,109 +1,158 @@
-body {
-	margin: 20px;
+.title{
+	
+	margin-bottom: 20px;
+
+}
+#title-name{
+	margin-left: 40px;
 }
 
-.knoweng-logo {
-	display: inline;
-	width: 33.33333%;
-	text-align: left;
-	float: left;
+#title-name a{
+	text-decoration: none;
+}
+#frontTitle{
+	color: #202c39;
+	font-weight: bold;
+
 }
 
-.bd2k-logo {
-	display: inline;
-	width: 33.33333%;
-	text-align: right;
-	float: left;
+#backTitle{
+
+	font-style: italic;
+	color : #2c5b6b;
+	font-weight: bold;
+
 }
 
-.title {
-	display: inline;
-	width: 33.33333%;
-	text-align: center;
-	float: left;
+#sub-title{
+	color: #2c5b6b;
+	width: 250px;
 }
 
-h1 {
-	margin-top: 0;
-	color: coral;
-	font-size: 60px;
-}
-
-#breadcrumbs {
-	font-size: 20px;
-	background-color: aquamarine;
-}
-
-#data-upload-head, #clus-method-head, #visual-head {
-	color: darkgreen;
-	font-size: 20px;
-	background-color: antiquewhite;
-	text-align: center;
-}
-
-#main-head {
-	color: white;
+#main-nav{
 	background-color: #334b5b;
 }
 
-#main-search {
-	height: inherit;
+#main-nav .nav-link{
+	color:white;
 	font-size: 16px;
-	float: right;
+	height: 80px;
+	border-top: 4px solid transparent;
+
+}
+#main-nav .nav-item{
+	height: 80px;
+		margin-left: 30px;
+		 line-height: 65px;
+  text-align: center;
+
+}
+#main-nav .nav-link:hover{
+	border-top: 4px solid white;
+
+	
 }
 
-#clus-choices {
-	font-size: 20px;
-}
-
-.glyphicon {
-	font-size: 15px;
-}
-
-.submit-btn {
+#mobile-brand{
 	color: white;
-	font-size: 18px;
-	background-color: #3fc0c3;/*slateblue;*/
-	border-radius: 10px;
-	cursor: pointer;
 }
 
-.submit-btn:hover {
-	background-color: yellowgreen;
+
+#img-slide{
+	margin-top: 50px;
 }
-#vis-pc12 {
-	visibility: hidden;
+#img-slide img{
+	height: 420px;
+	width: 1000px;
 }
-#vis-pc23 {
-	visibility: hidden;
+#img-slide .carousel-caption .slide-title{
+	color: white;
+	background-color: #415265;
+	border-radius: 5px;
+	font-size: 22px;
+
 }
-#vis-pc13 {
-	visibility: hidden;
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+	background-color: dimgrey;
 }
-.chart-stage > .row > .img_box{
-	 
+
+ .carousel-indicators li{
+ 	background-color: dimgrey;
+ 	opacity: 0.7;
+ }
+.carousel-indicators li[class="active"]{
+	background-color: black;
+	opacity: 1;
 }
-.chart-stage > .row > .img_box img {
+
+.contents{
+	color : #415265;
+	margin-top : 50px;
+	margin-bottom: 50px;
+}
+.contents h3{
+	color: #2a3a48;
+}
+
+.knoweng-link{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+
+div[class$="-title"]{
+	border-bottom: 3px solid #51adb2;
+	padding-bottom: 30px;
+}
+div[class$="-desc"]{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+div[class$="-overview"] h4, div[class$="-inst"] h4{
+	border-bottom: 1px solid  #2a3a48;
+	padding-bottom: 10px;
+}
+div[class$="-overview"] img{
 	width: 100%;
-	height: auto;
+	height: 200px;
 }
-.chart-title > a {
-	text-decoration: none;
-	color: white;
+
+div[class$="-inst"]{
+
 }
-.chart-stage{
-	font-size: 16px;
+
+
+footer{
+	height: 330px;
+	background-color: #334b5b;
+	color: #c6c7c9;
+}
+@media screen and (max-width: 480px) {
+    footer .head{
+    	font-size: 12px;
+    }
+    footer .addr{
+    	font-size: 10px;
+    }
+	
+
+
+
+}
+
+
+footer .fund{
+	font-size: 8px;
+}
+footer .head{
 	font-weight: bold;
-
+	margin-top: 30px;
 }
-.chart-stage > div{
-	text-align: center;
+footer .img-box {
+	margin: 30px 30px;
 }
-
-#help-info, #cite-info{
-
-	font-size: 16px;
-	font-weight: bold;
-	display: none;
+footer .img-box img{
+	height: 40px;
 }
-
