@@ -1,8 +1,10 @@
 /**
 *
 * @fileoverview Sequence Matching Game
-* @author ezoneid@gmail.com (Yeonsung Kim)
+* @author ykim103@illinois.edu (Yeonsung Kim)
 */
+
+
 
 //global constant variables
 /** @const */ var MATCH_COLOR = "#90EE90";
@@ -40,6 +42,34 @@
 /** @public */var current_level_delete_count;
 /** @public */var USE_SCORE_TABLE = 0;
 /** @public */var score_table;
+
+
+//TouchEvent
+function touchHandler(event) {
+    var touch = event.changedTouches[0];
+
+    var setting = {
+    	'bubbles' : true,
+    	'cancelable' : true,
+    	'view' : window,
+    	'detail' : 1,
+    	'screenX' : touch.screenX,
+    	'screenY' : touch.screenY,
+    	'clientX' : touch.clientX,
+    	'clientY' : touch.clientY,
+
+    };
+
+    var simulatedEvent = new MouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], setting);
+
+
+    touch.target.dispatchEvent(simulatedEvent);
+  
+}
 
 /**
  * Make DNA column for sequence table  
@@ -826,6 +856,12 @@ function init(){
 		}
 
 	});
+
+	//touch
+	document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
 
 
 }

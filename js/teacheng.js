@@ -18,6 +18,11 @@ function show_nw() {
 	$("#home-content").load("./partials/NW.html");
 }
 
+function show_dp(){
+	$('.navbar-collapse').collapse('hide');
+		$("#home-content").load("./partials/dotPlot.html");	
+}
+
 function show_phylo(){
 $('.navbar-collapse').collapse('hide');
 	$("#home-content").load("./partials/Phylo.html");
