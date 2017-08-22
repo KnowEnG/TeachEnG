@@ -1,0 +1,141 @@
+.main{
+
+}
+
+#title{
+	border: 2px solid black;
+	text-align: center;
+  margin-bottom: 30px;
+}
+
+.howto{
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 30px;
+   color: blue;
+}
+.sequences, .mutation-types{
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace
+}
+
+.nav-buttons{
+  margin-top: 30px;
+}
+
+.windowsize{
+  margin: 20px 20px;
+  font-weight: bold;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+.row > .first-letter{
+  font-size: 14px;
+}
+div[class$="-letter"] {
+  background: #fff;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+
+}
+
+div[class$="-result"]{
+ 
+  font-size: 20px;
+  color: red;
+
+}
+
+.level2-result{
+  text-align: center;
+
+}
+
+.square:focus {
+  outline: none;
+}
+
+.graph-frame{
+  border: 2px solid #868ee8;
+  border-radius: 8px;
+  height: 450px;
+}
+
+.graph-row{
+    margin: 30px 40px;
+}
+
+.graph-seq{
+  font-weight: bold;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+
+}
+
+.graph{
+  padding-left: 70px;
+}
+.features{
+  margin-top: 20px;
+}
+.features ul li > button{
+ font-family: 'PT Sans Narrow', sans-serif;
+
+ font-size: 14px;
+}
+
+.features ul{
+  list-style: none;
+}
+
+.features li{
+  margin-bottom: 10px;
+}
+
+#correct{
+  color: green;
+}
+#incorrect{
+  color: red;
+}
+
+#letterA{
+  color :green;
+
+}
+#letterT{
+  color: blue;
+}
+#letterC{
+  color: red;
+}
+#letterG{
+  color: black;
+
+}
+
+footer{
+  margin-top: 50px;
+}
