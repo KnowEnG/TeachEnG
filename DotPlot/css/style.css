@@ -136,6 +136,13 @@ div[class$="-result"]{
 
 }
 
+.hidden-X{
+  color : red;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
 footer{
   margin-top: 50px;
 }

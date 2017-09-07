@@ -10835,23 +10835,34 @@ var Board = function (_React$Component) {
 	_createClass(Board, [{
 		key: 'handleClick',
 		value: function handleClick(row, col) {
+			var _this2 = this;
+
 			var sq = this.state.squaresview.slice();
 			if (this.state.squares[row][col]) {
-				sq[row][col] = '\u2022';
-				this.setState({ squaresview: sq });
-				var counts = this.state.dotCounts - 1;
-				if (counts <= 0) {
-					var graph = this.renderGraph(this.state.originSequence, [this.state.mutatedSequence, this.state.types], this.state.matching);
-					var types = "Type(s) : " + this.state.types.join(", ");
-					this.setState({ result: "Congratulations, you have successfully filled in the dot plot!",
-						displayTypes: types,
-						graph: graph });
-				} else {
-					this.setState({ dotCounts: counts });
+				if (sq[row][col] !== '\u2022') {
+					sq[row][col] = '\u2022';
+					var counts = this.state.dotCounts - 1;
+
+					this.setState({ squaresview: sq,
+						dotCounts: counts });
+
+					if (counts <= 0) {
+						var graph = this.renderGraph(this.state.originSequence, [this.state.mutatedSequence, this.state.types], this.state.matching);
+						var types = "Type(s) : " + this.state.types.join(", ");
+						this.setState({ result: "Congratulations, you have successfully filled in the dot plot!",
+							displayTypes: types,
+							graph: graph });
+					}
 				}
 			} else {
-				sq[row][col] = null;
+
+				sq[row][col] = 'X';
 				this.setState({ squaresview: sq });
+
+				setTimeout(function () {
+					sq[row][col] = null;
+					_this2.setState({ squaresview: sq });
+				}, 1000);
 			}
 		}
 	}, {
@@ -10910,13 +10921,13 @@ var Board = function (_React$Component) {
 	}, {
 		key: 'renderSquare',
 		value: function renderSquare(row, col) {
-			var _this2 = this;
+			var _this3 = this;
 
 			return _react2.default.createElement(_Square2.default, {
 				key: row.toString() + col.toString(),
 				value: this.state.squaresview[row][col],
 				onClick: function onClick() {
-					return _this2.handleClick(row, col);
+					return _this3.handleClick(row, col);
 				} });
 		}
 	}, {
@@ -10964,7 +10975,7 @@ var Board = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this3 = this;
+			var _this4 = this;
 
 			var originArray = this.state.originSequence.split("");
 			//	console.log(originArray);
@@ -11022,7 +11033,7 @@ var Board = function (_React$Component) {
 								_react2.default.createElement(
 									_reactBootstrap.Button,
 									{ bsStyle: 'primary', onClick: function onClick() {
-											return _this3.regenerateSequnence();
+											return _this4.regenerateSequnence();
 										} },
 									'New Game'
 								)
@@ -11033,7 +11044,7 @@ var Board = function (_React$Component) {
 								_react2.default.createElement(
 									_reactBootstrap.Button,
 									{ bsStyle: 'success', onClick: function onClick() {
-											return _this3.nextlevel();
+											return _this4.nextlevel();
 										} },
 									'Go to Level 2'
 								)
@@ -11050,21 +11061,21 @@ var Board = function (_React$Component) {
 							_react2.default.createElement(
 								_reactBootstrap.Button,
 								{ className: this.state.active[0], bsStyle: 'default', onClick: function onClick() {
-										return _this3.changeWindowSize(1);
+										return _this4.changeWindowSize(1);
 									} },
 								'1'
 							),
 							_react2.default.createElement(
 								_reactBootstrap.Button,
 								{ className: this.state.active[1], bsStyle: 'default', onClick: function onClick() {
-										return _this3.changeWindowSize(2);
+										return _this4.changeWindowSize(2);
 									} },
 								'2'
 							),
 							_react2.default.createElement(
 								_reactBootstrap.Button,
 								{ className: this.state.active[2], bsStyle: 'default', onClick: function onClick() {
-										return _this3.changeWindowSize(3);
+										return _this4.changeWindowSize(3);
 									} },
 								'3'
 							)
@@ -19130,7 +19141,11 @@ var Square = function (_React$Component) {
         { className: 'square', onClick: function onClick() {
             return _this2.props.onClick();
           } },
-        this.props.value
+        _react2.default.createElement(
+          'span',
+          { className: 'hidden-' + this.props.value },
+          this.props.value
+        )
       );
     }
   }]);
